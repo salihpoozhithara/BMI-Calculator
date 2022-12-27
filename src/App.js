@@ -1,24 +1,24 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
-
+import Bmilist from './components/Bmilist';
+import Bmiscore from './components/Bmiscore';
+import Form from './components/Form'
+ 
 function App() {
+  const [bmi, setbmi ] = useState("")
+  const [bmiType, setbmiType] = useState("")
+
+  // let bmi= 18
+  //  const changeBmi = () =>{
+  //   // bmi = 19
+  //   setbmi(19)
+  // }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <> 
+     <Form/>
+    <Bmiscore bmiNo = {bmi} bmiName={bmiType}/>
+    <Bmilist/>
+    </>
   );
 }
 
